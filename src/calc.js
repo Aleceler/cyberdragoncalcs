@@ -16,5 +16,9 @@ export const CalcMagicDef = (lvl, spi) => {
 
 export const CalcHitRate = (agi, enemyAgi) => {
   let calc = parseInt(agi) + parseInt(enemyAgi) / 2;
-  return (agi / calc).toFixed(2);
+  if (agi === 0 && calc === 0) {
+    return 0;
+  } else {
+    return (parseInt(agi) / calc).toFixed(2);
+  }
 };

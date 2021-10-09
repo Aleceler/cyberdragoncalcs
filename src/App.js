@@ -13,6 +13,7 @@ function App() {
   const [will, setWill] = useState(0);
   const [int, setInt] = useState(0);
   const [spi, setSpi] = useState(0);
+  const [enemyAgi, setEnemyAgi] = useState(0);
 
   const CalcAtkDamage = () => {
     let mainAttr;
@@ -197,32 +198,92 @@ function App() {
           <StatusBar porcentage={spi + "%"}>
             <div></div>
           </StatusBar>
+        </StatusContainer>
+        <StatusContainer>
+          <StatusText>
+            <p>Enemy Agility</p>
+            <input
+              value={enemyAgi}
+              onChange={(e) =>
+                setEnemyAgi(
+                  e.target.value > 100
+                    ? 100
+                    : e.target.value < 0
+                    ? 0
+                    : e.target.value
+                )
+              }
+              type="number"
+            />
+          </StatusText>
+          <StatusBar porcentage={enemyAgi + "%"}>
+            <div></div>
+          </StatusBar>
 
           <BattleStatus>
             <div>Life: {CalcLife(lvl, cons)}</div>
             <div>Atk: {CalcAtkDamage()}</div>
             <div>Def: {CalcDef(lvl, will)}</div>
             <div>Magic Def: {CalcMagicDef(lvl, spi)}</div>
-            <div>Hit Rate: {CalcHitRate(agi, 50)}</div>
+            <div>Hit Rate: {CalcHitRate(agi, enemyAgi)}</div>
           </BattleStatus>
         </StatusContainer>
       </Card>
       <Thieve src={thieve} />
       <Warrior src={warrior} />
+
+      <Donation>
+        Help this project to encourage future updates:
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(
+              "0x12FA2f4121D995914E6708746bd5F131c8D9Af6c"
+            );
+          }}
+        >
+          0x12FA2f4121D995914E6708746bd5F131c8D9Af6c
+        </button>
+      </Donation>
     </AppContainer>
   );
 }
 
+const Donation = styled.div`
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  button {
+    background: transparent;
+    border: none;
+    color: white;
+    margin-left: 10px;
+    border-bottom: solid 1px white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 12px;
+    text-align: center;
+  }
+`;
+
 const BattleStatus = styled.div`
   color: white;
-  padding-top: 80px;
+  padding-top: 50px;
   justify-content: space-between;
   display: flex;
+  @media (max-width: 1200px) {
+    font-size: 12px;
+  }
 `;
 
 const StatusContainer = styled.div`
   width: 100%;
   margin: 15px 0;
+
+  @media (max-width: 1200px) {
+    margin: 10px 0;
+  }
 `;
 
 const HeroContainer = styled.div`
@@ -292,7 +353,7 @@ const AppContainer = styled.div`
 `;
 
 const Card = styled.div`
-  height: 600px;
+  height: 650px;
   width: 500px;
   border-radius: 20px;
   padding: 50px;
@@ -312,12 +373,18 @@ const Thieve = styled.img`
   position: absolute;
   bottom: 30px;
   right: 100px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const Warrior = styled.img`
   position: absolute;
   bottom: 30px;
   left: 100px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 export default App;
