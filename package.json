@@ -1,5 +1,6 @@
 {
   "name": "cyberdragon",
+  "homepage": "https://aleceler.github.io/cyberdragoncalcs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
