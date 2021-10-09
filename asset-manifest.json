@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/cyberdragoncalcs/static/js/main.4a46007c.chunk.js",
-    "main.js.map": "/cyberdragoncalcs/static/js/main.4a46007c.chunk.js.map",
+    "main.js": "/cyberdragoncalcs/static/js/main.6e1e9ea8.chunk.js",
+    "main.js.map": "/cyberdragoncalcs/static/js/main.6e1e9ea8.chunk.js.map",
     "runtime-main.js": "/cyberdragoncalcs/static/js/runtime-main.ccd157d7.js",
     "runtime-main.js.map": "/cyberdragoncalcs/static/js/runtime-main.ccd157d7.js.map",
     "static/js/2.f9b272bc.chunk.js": "/cyberdragoncalcs/static/js/2.f9b272bc.chunk.js",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.ccd157d7.js",
     "static/js/2.f9b272bc.chunk.js",
-    "static/js/main.4a46007c.chunk.js"
+    "static/js/main.6e1e9ea8.chunk.js"
   ]
 }
